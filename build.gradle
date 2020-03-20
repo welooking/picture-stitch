@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+}
+
+group = 'com.ice.tools'
+version = '0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+}
+
+task runScript(type: JavaExec) {
+  description 'Run Groovy script'
+  main = 'com.ice.tools.StitchPictures'
+  classpath = sourceSets.main.runtimeClasspath
+}
+
+defaultTasks 'runScript'
